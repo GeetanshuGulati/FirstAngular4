@@ -9,6 +9,7 @@ import { SigninComponent } from './signin/signin.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RainbowDirective } from './rainbow.directive';
+import { BriefComponent } from './brief/brief.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RainbowDirective } from './rainbow.directive';
     PageNotFoundComponent,
     SigninComponent,
     DashboardComponent,
-    RainbowDirective
+    RainbowDirective,
+    BriefComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,12 @@ import { RainbowDirective } from './rainbow.directive';
         { path: '', redirectTo: '/welcome', pathMatch:"full"},
         { path: 'welcome', component: WelcomeComponent },
         { path: 'signin', component: SigninComponent },
-        { path: 'dashboard', component: DashboardComponent },
+        { path: 'dashboard', component: DashboardComponent,
+          children:[
+            {path:"brief", component: BriefComponent},
+            { path: '**', component: PageNotFoundComponent }
+          ]
+        },
         { path: '**', component: PageNotFoundComponent },
      ])
   ],
