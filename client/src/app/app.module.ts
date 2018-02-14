@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RainbowDirective } from './rainbow.directive';
 import { BriefComponent } from './brief/brief.component';
+import { RotateDirective } from './rotate.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BriefComponent } from './brief/brief.component';
     SigninComponent,
     DashboardComponent,
     RainbowDirective,
-    BriefComponent
+    BriefComponent,
+    RotateDirective
   ],
   imports: [
     BrowserModule,
