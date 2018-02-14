@@ -7,12 +7,11 @@ export class RotateDirective {
 
   constructor(private Element:ElementRef) {
   this.rotate = 0
-  this.height = 126
+  this.height = 180
    setInterval(()=>{
     Element.nativeElement.style.transform = "rotate("+this.rotate+"deg)"
-    if(this.rotate < 180){
+    if(this.rotate <= 180){
       this.height--
-      console.log(this.heightheight)
     }
     else{
       this.height++
